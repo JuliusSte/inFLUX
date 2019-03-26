@@ -35,15 +35,15 @@ class ContactFormState extends State<ContactForm> {
               TextFormField(
                 keyboardType: TextInputType.text,
                 autocorrect: false,
-                autovalidate: nameValidate,
-                controller: nameController,
+                autovalidate: true,
+                //controller: nameController,
                 onSaved: (name) {
                   this.name = name;
                 },
                 maxLines: 1,
                 validator: (value) {
-                  if (value.isEmpty || value.length < 1) {
-                    return 'Please enter name';
+                  if (value.isEmpty || value.length < 0) {
+                    return 'Please enter your name to continue';
                   }
                 },
                 decoration: new InputDecoration(
